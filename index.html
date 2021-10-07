@@ -1,0 +1,121 @@
+<!doctype html>
+<!-- English HTML Document -->
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#002A57">
+
+    <!-- PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="Heat Outlines">
+
+    <!-- Title -->
+    <title>Heat Outlines</title>
+    <!-- Description -->
+    <meta name="description" content="UVic CSC and SENG Heat Outlines.">
+    <!-- Author -->
+    <meta name="author" content="FlyteWizard">
+    <!-- Keywords -->
+    <meta name="keywords" content="heat, outlines, uvic, csc, seng">
+
+    <!--Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand align-middle" href="/">
+            <img src="img/favicon.png" alt="">
+            <span>Heat Outlines</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+      <section class="row main">
+        <div class="col">
+          <h1>UVic CSC and SENG Heat Outlines</h1>
+          <p>
+            Select a course, term, and year to view its heat outline. </br>
+            List of courses provided by: <a href="https://heat.csc.uvic.ca/colinks/sl/CSC,SENG" target="_blank">https://heat.csc.uvic.ca/colinks/sl/CSC,SENG</a> </br></br>
+            Note: The selection is NOT dynamic, so the course, term, and year you select might not have a heat outline.
+          </p>
+        </div>
+      </section>
+
+      <!-- Form -->
+      <form class="row gy-3">
+        <!-- Course -->
+        <div id="v-model-select-course" class="col-sm-12 col-md-4">
+          <label for="course" class="form-label">Course</label>
+          <select class="form-select" id="course" v-model="selectedCourse">
+            <option v-for="course in courses" :value="course.value">
+              {{ course.text }}
+            </option>
+          </select>
+        </div>
+        <!-- Term -->
+        <div id="v-model-select-term" class="col-sm-12 col-md-4">
+          <label for="term" class="form-label">Term</label>
+          <select class="form-select" id="term" v-model="selectedTerm">
+            <option v-for="term in terms" :value="term.value">
+              {{ term.text }}
+            </option>
+          </select>
+        </div>
+        <!-- Year -->
+        <div id="v-model-select-year" class="col-sm-12 col-md-4">
+          <label for="year" class="form-label">Year</label>
+          <select class="form-select" id="year" v-model="selectedYear">
+            <option v-for="year in years" :value="year.value">
+              {{ year.text }}
+            </option>
+          </select>
+        </div>
+        <!-- Submit -->
+        <div class="col-sm-12 d-flex justify-content-end">
+          <button class="btn btn-primary my-2 my-sm-0" type="button" id="generateOutline" onclick="generate()">
+            Generate Heat Outline
+          </button>
+        </div>
+      </form>
+
+      <!-- Couse Outline Information -->
+      <section id="courseInformation">
+        <course-information v-for="course in courses"
+                  :key="course.id"
+                  :calendar="course.calendar"
+                  :course="course.course"
+                  :link="course.link"
+                  :term="course.term"
+                  :year="course.year"
+        ></course-information>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <p class="navbar-text">Source: <a href="http://heat.csc.uvic.ca/coview/" target="_blank">http://heat.csc.uvic.ca/coview/</a></p>
+          <p class="navbar-text">CourseUp: <a href="https://courseup.vikelabs.ca" target="_blank">https://courseup.vikelabs.ca</a></p>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
