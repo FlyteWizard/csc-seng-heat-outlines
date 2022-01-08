@@ -18,7 +18,7 @@ let termApp = Vue.createApp({
 let yearApp = Vue.createApp({
   data() {
     return {
-      selectedYear: '2021',
+      selectedYear: '2022',
       years: [
         { text: '2022', value: '2022' },
         { text: '2021', value: '2021' },
