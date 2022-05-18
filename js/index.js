@@ -4,7 +4,7 @@
 let termApp = Vue.createApp({
   data() {
     return {
-      selectedTerm: 'Spring',
+      selectedTerm: 'Summer',
       terms: [
         { text: 'Fall', value: 'Fall' },
         { text: 'Spring', value: 'Spring' },
@@ -170,8 +170,8 @@ let courses = Vue.createApp({
         {
           calendar: 'https://web.uvic.ca/calendar/CDs/CSC/110.html',
           course: 'CSC 110',
-          link: 'https://heat.csc.uvic.ca/coview/course/2022011/CSC110',
-          term: 'Spring',
+          link: 'https://heat.csc.uvic.ca/coview/course/2022051/CSC110',
+          term: 'Summer',
           year: '2022',
         }
       ]
