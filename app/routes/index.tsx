@@ -12,8 +12,6 @@ export default function Index() {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
 
-  console.log(selectedCourse, selectedYear, selectedTerm);
-
   const handleChange = (event: React.FormEvent) => {
     const target = event.target as typeof event.target & {
       course: HTMLInputElement;
