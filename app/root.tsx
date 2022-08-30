@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => ({
   author: "FlyteWizard",
   keywords: "uvic, csc, seng, heat, outlines",
   viewport: "width=device-width,initial-scale=1",
-  "theme-color": "#002A57",
+  "theme-color": "#6d28d9",
 });
 
 export function links() {
@@ -28,7 +28,7 @@ export function links() {
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     { rel: "preconnect", href: "https://fonts.gstatic.com" },
     {
-      rel: "stylesheet",
+      rel: "stylesheet preload",
       href: "https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap",
     },
   ];

@@ -1,29 +1,27 @@
 import { useState } from "react";
 
-import { getCurrentTerm, getCurrentYear } from "./helpers/time";
 import { getCalendarEntryLink, getHeatOutlineLink } from "./helpers/links";
+import { getCurrentTerm, getCurrentYear } from "./helpers/time";
 
+import CourseForm from "./components/CourseForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import CourseForm from "./components/CourseForm";
 
 export default function Index() {
   const [selectedCourse, setSelectedCourse] = useState("CSC 110");
-  const [selectedYear, setSelectedYear] = useState(getCurrentYear());
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
-
-  console.log(selectedCourse, selectedYear, selectedTerm);
+  const [selectedYear, setSelectedYear] = useState(getCurrentYear());
 
   const handleChange = (event: React.FormEvent) => {
     const target = event.target as typeof event.target & {
       course: HTMLInputElement;
-      year: HTMLInputElement;
       term: HTMLInputElement;
+      year: HTMLInputElement;
     };
 
     setSelectedCourse(target.course.value);
-    setSelectedYear(target.year.value);
     setSelectedTerm(target.term.value);
+    setSelectedYear(target.year.value);
   };
 
   return (
@@ -85,8 +83,7 @@ export default function Index() {
           aria-describedby="preview"
           className="prose prose-stone mx-auto max-w-7xl prose-a:break-words prose-a:text-violet-800 focus-within:prose-a:rounded focus-within:prose-a:outline-none focus-within:prose-a:ring-1 focus-within:prose-a:ring-violet-700 focus-within:prose-a:ring-offset-2 focus-within:prose-a:ring-offset-white"
         >
-          <h2>Heat Outline Preview</h2>
-
+          <h2 id="preview">Heat Outline Preview</h2>
           <iframe
             title="Heat Outline Preview"
             src={getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
