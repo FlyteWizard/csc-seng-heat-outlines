@@ -88,6 +88,7 @@ export default function Index() {
           <h2>Heat Outline Preview</h2>
 
           <iframe
+            title="Heat Outline Preview"
             src={getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
             frameBorder="0"
             allowFullScreen

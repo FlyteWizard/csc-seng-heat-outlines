@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <nav className="relative flex flex-wrap items-center justify-between gap-2 bg-violet-50 py-2 px-4">
+      <nav className="relative flex flex-wrap items-center justify-between gap-2 break-words bg-violet-50 py-2 px-4">
         <p>
           Source:{" "}
           <a
