@@ -58,15 +58,6 @@ export default function Index() {
           <p>
             Heat Outline:{" "}
             <a
-              href={getCalendarEntryLink(selectedCourse)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {getCalendarEntryLink(selectedCourse)}
-            </a>
-            <br></br>
-            Calendar Entry:{" "}
-            <a
               href={getHeatOutlineLink(
                 selectedCourse,
                 selectedTerm,
@@ -76,6 +67,15 @@ export default function Index() {
               rel="noopener noreferrer"
             >
               {getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
+            </a>
+            <br></br>
+            Calendar Entry:{" "}
+            <a
+              href={getCalendarEntryLink(selectedCourse)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {getCalendarEntryLink(selectedCourse)}
             </a>
           </p>
         </section>
