@@ -7,3 +7,5 @@ export const disciplines = [
   "MECH",
   "SENG",
 ];
+
+export const startDiscipline = "CSC";
