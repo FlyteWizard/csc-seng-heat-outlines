@@ -15,7 +15,7 @@ export const getHeatOutlineLink = (
   let termStartMonth;
   if (term === "Spring") {
     termStartMonth = "01";
-  } else if (term === "Summer") {
+  } else if (term === "Summer" || term === "Summer: May - June") {
     termStartMonth = "05";
   } else if (term === "Fall") {
     termStartMonth = "09";
@@ -23,6 +23,13 @@ export const getHeatOutlineLink = (
     termStartMonth = "";
   }
 
-  let heatOutlineLink = `https://heat.csc.uvic.ca/coview/course/${year}${termStartMonth}1/${courseNameCode}`;
+  let termStartDate =
+    term === "Spring" || term === "Summer" || term === "Fall"
+      ? 1
+      : term === "Summer: May - June"
+      ? 2
+      : "";
+
+  let heatOutlineLink = `https://heat.csc.uvic.ca/coview/course/${year}${termStartMonth}${termStartDate}/${courseNameCode}`;
   return heatOutlineLink;
 };

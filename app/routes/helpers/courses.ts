@@ -1,4 +1,26 @@
-export const civeCourses = [
+export const bmeCourseList = [
+  "ME2 00",
+  "BME 201",
+  "BME 320",
+  "BME 335",
+  "BME 350",
+  "BME 401A",
+  "BME 401B",
+  "BME 401C",
+  "BME 401D",
+  "BME 402",
+  "BME 403",
+  "BME 404",
+  "BME 434",
+  "BME 448",
+  "BME 452",
+  "BME 481",
+  "BME 490",
+  "BME 498",
+  "BME 499",
+];
+
+export const civeCourseList = [
   "CIVE 200",
   "CIVE 210",
   "CIVE 220",
@@ -49,7 +71,7 @@ export const civeCourses = [
   "CIVE 499",
 ];
 
-export const cscCourses = [
+export const cscCourseList = [
   "CSC 100",
   "CSC 101",
   "CSC 103",
@@ -134,7 +156,7 @@ export const cscCourses = [
   "CSC 499",
 ];
 
-export const eceCourses = [
+export const eceCourseList = [
   "ECE 216",
   "ECE 220",
   "ECE 241",
@@ -207,7 +229,7 @@ export const eceCourses = [
   "ECE 499",
 ];
 
-export const engrCourses = [
+export const engrCourseList = [
   "ENGR 110",
   "ENGR 112",
   "ENGR 120",
@@ -220,7 +242,7 @@ export const engrCourses = [
   "ENGR 448",
 ];
 
-export const mechCourses = [
+export const mechCourseList = [
   "MECH 150",
   "MECH 200",
   "MECH 220",
@@ -279,7 +301,7 @@ export const mechCourses = [
   "MECH 499",
 ];
 
-export const sengCourses = [
+export const sengCourseList = [
   "SENG 265",
   "SENG 275",
   "SENG 310",
