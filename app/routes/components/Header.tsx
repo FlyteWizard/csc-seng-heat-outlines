@@ -2,10 +2,10 @@ import { Link } from "@remix-run/react";
 
 import favicon from "../../assets/favicon.png";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header>
-      <nav className="relative flex flex-wrap items-center justify-between gap-2 bg-violet-50 py-2 px-4">
+      <nav className="relative flex flex-wrap items-center justify-between gap-2 bg-violet-50 px-4 py-2">
         <div className="flex items-center gap-2">
           <img src={favicon} alt="" width="32px" height="32px" />
           <Link
@@ -35,5 +35,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;
