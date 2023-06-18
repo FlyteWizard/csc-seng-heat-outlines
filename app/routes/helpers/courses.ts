@@ -328,3 +328,13 @@ export const sengCourseList = [
   "SENG 498",
   "SENG 499",
 ];
+
+export const startCourseList = {
+  BME: "BME 200",
+  CIVE: "CIVE 200",
+  CSC: "CSC 110",
+  ECE: "ECE 216",
+  ENGR: "ENGR 110",
+  MECH: "MECH 150",
+  SENG: "SENG 265",
+};
