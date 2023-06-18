@@ -5,7 +5,7 @@ import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { terms } from "../helpers/terms";
 import { getCurrentTerm } from "../helpers/time";
 
-const Termselection = () => {
+export const TermSelection = () => {
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
   const [query, setQuery] = useState("");
 
@@ -39,7 +39,7 @@ const Termselection = () => {
           />
         </Combobox.Button>
       </div>
-      <Combobox.Options className="absolute z-10 mt-1 mb-0 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+      <Combobox.Options className="absolute z-10 mb-0 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
         {filteredCourse.map((course) => (
           <Combobox.Option
             key={course}
@@ -81,5 +81,3 @@ const Termselection = () => {
     </Combobox>
   );
 };
-
-export default Termselection;

@@ -1,18 +1,62 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Combobox } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
 
-import { courses } from "../helpers/courses";
+import {
+  civeCourses,
+  cscCourses,
+  eceCourses,
+  engrCourses,
+  mechCourses,
+  sengCourses,
+} from "../helpers/courses";
 
-const CourseSelection = () => {
+export const CourseSelection = ({
+  selectedDiscipline,
+}: {
+  selectedDiscipline: String;
+}) => {
   const [selectedCourse, setSelectedCourse] = useState("CSC 110");
+  const [selectedCourseList, setSelectedCourseList] = useState(cscCourses);
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    switch (selectedDiscipline) {
+      case "CIVE":
+        setSelectedCourseList(civeCourses);
+        setSelectedCourse("CIVE 200");
+        break;
+      case "CSC":
+        setSelectedCourseList(cscCourses);
+        setSelectedCourse("CSC 110");
+        break;
+      case "ECE":
+        setSelectedCourseList(eceCourses);
+        setSelectedCourse("ECE 216");
+        break;
+      case "ENGR":
+        setSelectedCourseList(engrCourses);
+        setSelectedCourse("ENGR 110");
+        break;
+      case "MECH":
+        setSelectedCourseList(mechCourses);
+        setSelectedCourse("MECH 150");
+        break;
+      case "SENG":
+        setSelectedCourseList(sengCourses);
+        setSelectedCourse("SENG 265");
+        break;
+      default:
+        setSelectedCourseList(cscCourses);
+        setSelectedCourse("CSC 110");
+    }
+  }, [selectedDiscipline]);
 
   const filteredCourse =
     query === ""
-      ? courses
-      : courses.filter((courses) => {
-          return courses.toLowerCase().includes(query.toLowerCase());
+      ? selectedCourseList
+      : selectedCourseList.filter((selectedCourseList) => {
+          return selectedCourseList.toLowerCase().includes(query.toLowerCase());
         });
 
   return (
@@ -38,7 +82,7 @@ const CourseSelection = () => {
           />
         </Combobox.Button>
       </div>
-      <Combobox.Options className="absolute z-10 mt-1 mb-0 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+      <Combobox.Options className="absolute z-10 mb-0 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
         {filteredCourse.map((course) => (
           <Combobox.Option
             key={course}
@@ -80,5 +124,3 @@ const CourseSelection = () => {
     </Combobox>
   );
 };
-
-export default CourseSelection;

@@ -19,9 +19,11 @@ export default function Index() {
       year: HTMLInputElement;
     };
 
-    setSelectedCourse(target.course.value);
-    setSelectedTerm(target.term.value);
-    setSelectedYear(target.year.value);
+    if (target) {
+      setSelectedCourse(target.course.value);
+      setSelectedTerm(target.term.value);
+      setSelectedYear(target.year.value);
+    }
   };
 
   return (
@@ -32,16 +34,19 @@ export default function Index() {
           aria-describedby="information"
           className="prose prose-stone mx-auto max-w-7xl prose-h1:mb-2 prose-a:break-words prose-a:text-violet-800 focus-within:prose-a:rounded focus-within:prose-a:outline-none focus-within:prose-a:ring-1 focus-within:prose-a:ring-violet-700 focus-within:prose-a:ring-offset-2 focus-within:prose-a:ring-offset-white"
         >
-          <h1 id="information">UVic CSC and SENG Heat Outlines</h1>
+          <h1 id="information">
+            UVic Engineering and Computer Science Heat Outlines
+          </h1>
           <p>
-            Select a course, term, and year to view its heat outline.<br></br>
+            Select a discipline, course, term, and year to view its heat
+            outline.<br></br>
             List of courses provided by:{" "}
             <a
-              href="https://heat.csc.uvic.ca/colinks/sl/CSC,SENG"
+              href="https://heat.csc.uvic.ca/colinks/sl/CIVE,CSC,ECE,ENGR,MECH,SENG"
               target="_blank"
               rel="noopener noreferrer"
             >
-              https://heat.csc.uvic.ca/colinks/sl/CSC,SENG
+              https://heat.csc.uvic.ca/colinks/sl/CIVE,CSC,ECE,ENGR,MECH,SENG
             </a>
           </p>
         </section>
@@ -87,7 +92,6 @@ export default function Index() {
           <iframe
             title="Heat Outline Preview"
             src={getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
-            frameBorder="0"
             allowFullScreen
             className="h-96 w-full"
           ></iframe>
