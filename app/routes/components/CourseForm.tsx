@@ -1,29 +1,31 @@
 import { useState } from "react";
+
 import { CourseSelection } from "./CourseSelection";
 import { DisciplineSelection } from "./DisciplineSelection";
 import { TermSelection } from "./TermSelection";
 import { YearSelection } from "./YearSelection";
 
-const CourseForm = ({ onChange }: { onChange: Function }) => {
-  const updateCourse = (event: React.FormEvent) => {
+import { startDiscipline } from "../helpers/disciplines";
+
+export const CourseForm = ({ onChange }: { onChange: Function }) => {
+  const [selectedDiscipline, setSelectedDiscipline] = useState(startDiscipline);
+
+  const updateHeatOutline = (event: React.FormEvent) => {
     event.preventDefault();
     onChange(event);
   };
 
-  const [selectedDiscipline, setSelectedDiscipline] = useState("CSC");
-
-  const updateCourseSelection = (event: any) => {
+  const updateDiscipline = (event: React.SetStateAction<string>) => {
     setSelectedDiscipline(event);
-    onChange(event);
   };
 
   return (
     <form
-      onSubmit={updateCourse}
+      onSubmit={updateHeatOutline}
       className="prose prose-stone mx-auto max-w-7xl space-y-8"
     >
       <div className="flex w-full flex-col gap-x-4 gap-y-8 md:flex-row">
-        <DisciplineSelection updateCourseSelection={updateCourseSelection} />
+        <DisciplineSelection updateDiscipline={updateDiscipline} />
         <CourseSelection selectedDiscipline={selectedDiscipline} />
         <TermSelection />
         <YearSelection />
@@ -39,5 +41,3 @@ const CourseForm = ({ onChange }: { onChange: Function }) => {
     </form>
   );
 };
-
-export default CourseForm;

@@ -3,12 +3,14 @@ import { Combobox } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
 
 import {
-  civeCourses,
-  cscCourses,
-  eceCourses,
-  engrCourses,
-  mechCourses,
-  sengCourses,
+  bmeCourseList,
+  civeCourseList,
+  cscCourseList,
+  eceCourseList,
+  engrCourseList,
+  mechCourseList,
+  sengCourseList,
+  startCourseList,
 } from "../helpers/courses";
 
 export const CourseSelection = ({
@@ -16,39 +18,43 @@ export const CourseSelection = ({
 }: {
   selectedDiscipline: String;
 }) => {
-  const [selectedCourse, setSelectedCourse] = useState("CSC 110");
-  const [selectedCourseList, setSelectedCourseList] = useState(cscCourses);
+  const [selectedCourse, setSelectedCourse] = useState(startCourseList.CSC);
+  const [selectedCourseList, setSelectedCourseList] = useState(cscCourseList);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     switch (selectedDiscipline) {
+      case "BME":
+        setSelectedCourseList(bmeCourseList);
+        setSelectedCourse(startCourseList.BME);
+        break;
       case "CIVE":
-        setSelectedCourseList(civeCourses);
-        setSelectedCourse("CIVE 200");
+        setSelectedCourseList(civeCourseList);
+        setSelectedCourse(startCourseList.CIVE);
         break;
       case "CSC":
-        setSelectedCourseList(cscCourses);
-        setSelectedCourse("CSC 110");
+        setSelectedCourseList(cscCourseList);
+        setSelectedCourse(startCourseList.CSC);
         break;
       case "ECE":
-        setSelectedCourseList(eceCourses);
-        setSelectedCourse("ECE 216");
+        setSelectedCourseList(eceCourseList);
+        setSelectedCourse(startCourseList.ECE);
         break;
       case "ENGR":
-        setSelectedCourseList(engrCourses);
-        setSelectedCourse("ENGR 110");
+        setSelectedCourseList(engrCourseList);
+        setSelectedCourse(startCourseList.ENGR);
         break;
       case "MECH":
-        setSelectedCourseList(mechCourses);
-        setSelectedCourse("MECH 150");
+        setSelectedCourseList(mechCourseList);
+        setSelectedCourse(startCourseList.MECH);
         break;
       case "SENG":
-        setSelectedCourseList(sengCourses);
-        setSelectedCourse("SENG 265");
+        setSelectedCourseList(sengCourseList);
+        setSelectedCourse(startCourseList.SENG);
         break;
       default:
-        setSelectedCourseList(cscCourses);
-        setSelectedCourse("CSC 110");
+        setSelectedCourseList(cscCourseList);
+        setSelectedCourse(startCourseList.CSC);
     }
   }, [selectedDiscipline]);
 
@@ -71,7 +77,9 @@ export const CourseSelection = ({
       <div className="relative cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
         <Combobox.Input
           className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-stone-900 focus:ring-0"
-          onChange={(event: any) => setQuery(event.target.value)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setQuery(event.target.value)
+          }
         />
         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
           <ChevronUpDownIcon
