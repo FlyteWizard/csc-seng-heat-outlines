@@ -9,7 +9,7 @@ export const TermSelection = () => {
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
   const [query, setQuery] = useState("");
 
-  const filteredCourse =
+  const filteredTerm =
     query === ""
       ? terms
       : terms.filter((terms) => {
@@ -40,10 +40,10 @@ export const TermSelection = () => {
         </Combobox.Button>
       </div>
       <Combobox.Options className="absolute z-10 mb-0 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-        {filteredCourse.map((course) => (
+        {filteredTerm.map((term) => (
           <Combobox.Option
-            key={course}
-            value={course}
+            key={term}
+            value={term}
             className={({ active }) =>
               `relative cursor-default select-none py-2 pl-10 pr-4 ${
                 active ? "bg-teal-600 text-white" : "text-stone-900"
@@ -57,7 +57,7 @@ export const TermSelection = () => {
                     selected ? "font-medium" : "font-normal"
                   }`}
                 >
-                  {course}
+                  {term}
                 </span>
                 {selected ? (
                   <span
