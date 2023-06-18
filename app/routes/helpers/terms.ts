@@ -1,1 +1,1 @@
-export const terms = ["Fall", "Spring", "Summer"];
+export const terms = ["Fall", "Spring", "Summer", "Summer: May - June"];

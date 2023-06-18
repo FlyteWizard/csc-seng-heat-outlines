@@ -5,11 +5,11 @@ import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { terms } from "../helpers/terms";
 import { getCurrentTerm } from "../helpers/time";
 
-const Termselection = () => {
+export const TermSelection = () => {
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
   const [query, setQuery] = useState("");
 
-  const filteredCourse =
+  const filteredTerm =
     query === ""
       ? terms
       : terms.filter((terms) => {
@@ -39,11 +39,11 @@ const Termselection = () => {
           />
         </Combobox.Button>
       </div>
-      <Combobox.Options className="absolute z-10 mt-1 mb-0 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-        {filteredCourse.map((course) => (
+      <Combobox.Options className="absolute z-10 mb-0 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 pl-0 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+        {filteredTerm.map((term) => (
           <Combobox.Option
-            key={course}
-            value={course}
+            key={term}
+            value={term}
             className={({ active }) =>
               `relative cursor-default select-none py-2 pl-10 pr-4 ${
                 active ? "bg-teal-600 text-white" : "text-stone-900"
@@ -57,7 +57,7 @@ const Termselection = () => {
                     selected ? "font-medium" : "font-normal"
                   }`}
                 >
-                  {course}
+                  {term}
                 </span>
                 {selected ? (
                   <span
@@ -81,5 +81,3 @@ const Termselection = () => {
     </Combobox>
   );
 };
-
-export default Termselection;

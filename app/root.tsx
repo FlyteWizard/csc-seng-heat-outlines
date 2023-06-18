@@ -14,9 +14,9 @@ import favicon from "./assets/favicon.png";
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Heat Outlines",
-  description: "UVic CSC and SENG Heat Outlines.",
+  description: "UVic Engineering and Computer Science Heat Outlines.",
   author: "FlyteWizard",
-  keywords: "uvic, csc, seng, heat, outlines",
+  keywords: "uvic, bme, cive, csc, ece, engr, mech, seng, heat, outlines",
   viewport: "width=device-width,initial-scale=1",
   "theme-color": "#6d28d9",
 });
