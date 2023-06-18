@@ -3,9 +3,9 @@ import { useState } from "react";
 import { getCalendarEntryLink, getHeatOutlineLink } from "./helpers/links";
 import { getCurrentTerm, getCurrentYear } from "./helpers/time";
 
-import CourseForm from "./components/CourseForm";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import { CourseForm } from "./components/CourseForm";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 
 export default function Index() {
   const [selectedCourse, setSelectedCourse] = useState("CSC 110");
@@ -29,6 +29,7 @@ export default function Index() {
   return (
     <>
       <Header />
+
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-20">
         <section
           aria-describedby="information"
@@ -42,11 +43,11 @@ export default function Index() {
             outline.<br></br>
             List of courses provided by:{" "}
             <a
-              href="https://heat.csc.uvic.ca/colinks/sl/CIVE,CSC,ECE,ENGR,MECH,SENG"
+              href="https://heat.csc.uvic.ca/colinks/sl/BME,CIVE,CSC,ECE,ENGR,MECH,SENG"
               target="_blank"
               rel="noopener noreferrer"
             >
-              https://heat.csc.uvic.ca/colinks/sl/CIVE,CSC,ECE,ENGR,MECH,SENG
+              https://heat.csc.uvic.ca/colinks/sl/BME,CIVE,CSC,ECE,ENGR,MECH,SENG
             </a>
           </p>
         </section>
@@ -84,6 +85,7 @@ export default function Index() {
             </a>
           </p>
         </section>
+
         <section
           aria-describedby="preview"
           className="prose prose-stone mx-auto max-w-7xl prose-a:break-words prose-a:text-violet-800 focus-within:prose-a:rounded focus-within:prose-a:outline-none focus-within:prose-a:ring-1 focus-within:prose-a:ring-violet-700 focus-within:prose-a:ring-offset-2 focus-within:prose-a:ring-offset-white"
@@ -97,6 +99,7 @@ export default function Index() {
           ></iframe>
         </section>
       </main>
+
       <Footer />
     </>
   );
