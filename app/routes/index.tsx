@@ -2,13 +2,14 @@ import { useState } from "react";
 
 import { getCalendarEntryLink, getHeatOutlineLink } from "./helpers/links";
 import { getCurrentTerm, getCurrentYear } from "./helpers/time";
+import { startCourseList } from "./helpers/courses";
 
 import { CourseForm } from "./components/CourseForm";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
 export default function Index() {
-  const [selectedCourse, setSelectedCourse] = useState("CSC 110");
+  const [selectedCourse, setSelectedCourse] = useState(startCourseList.CSC);
   const [selectedTerm, setSelectedTerm] = useState(getCurrentTerm());
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
 
