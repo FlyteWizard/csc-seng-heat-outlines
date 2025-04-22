@@ -373,6 +373,7 @@ export const eceCourseList = [
   "ECE 486",
   "ECE 488",
   "ECE 490",
+  "ECE 496",
   "ECE 496A",
   "ECE 496B",
   "ECE 496C",
@@ -392,9 +393,6 @@ export const eceCourseList = [
   "ECE 519A",
   "ECE 519B",
   "ECE 519C",
-  "ECE 521",
-  "ECE 521",
-  "ECE 521",
   "ECE 521",
   "ECE 522",
   "ECE 524",
@@ -446,7 +444,6 @@ export const eceCourseList = [
   "ECE 596D",
   "ECE 597",
   "ECE 621",
-  "ECE 621",
 ];
 
 export const engrCourseList = [
@@ -460,6 +457,7 @@ export const engrCourseList = [
   "ENGR 297",
   "ENGR 446",
   "ENGR 448",
+  "ENGR 498",
 ];
 
 export const mechCourseList = [
