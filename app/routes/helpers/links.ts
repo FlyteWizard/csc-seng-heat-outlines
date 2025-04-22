@@ -6,6 +6,20 @@ export const getCalendarEntryLink = (course: string): string => {
   return calendarEntryLink;
 };
 
+export const isHeatOutlineUnpublished = (
+  year: string,
+  termStartMonth: string
+): boolean => {
+  const currentDate = new Date();
+  if (
+    Number(termStartMonth) > currentDate.getMonth() + 1 &&
+    currentDate.getFullYear() === Number(year)
+  ) {
+    return true;
+  }
+  return false;
+};
+
 export const getHeatOutlineLink = (
   course: string,
   term: string,
@@ -31,5 +45,8 @@ export const getHeatOutlineLink = (
       : "";
 
   let heatOutlineLink = `https://heat.csc.uvic.ca/coview/course/${year}${termStartMonth}${termStartDate}/${courseNameCode}`;
+  if (isHeatOutlineUnpublished(year, termStartMonth)) {
+    heatOutlineLink += "?unp=t";
+  }
   return heatOutlineLink;
 };
