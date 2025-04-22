@@ -14,6 +14,17 @@ export const Footer = () => {
           </a>
         </p>
         <p>
+          UVic:{" "}
+          <a
+            href="https://heat.csc.uvic.ca/cofind/"
+            className="text-stone-800 underline focus-within:rounded focus-within:outline-none focus-within:ring-1 focus-within:ring-violet-700 focus-within:ring-offset-2 focus-within:ring-offset-violet-50"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://heat.csc.uvic.ca/cofind/
+          </a>
+        </p>
+        <p>
           CourseUp:{" "}
           <a
             href="https://courseup.vikelabs.ca/"
