@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.6.8",
+    "@remix-run/dev": "^2.17.0",
     "@remix-run/eslint-config": "^1.6.8",
     "@remix-run/serve": "^1.6.8",
     "@tailwindcss/typography": "^0.5.4",
