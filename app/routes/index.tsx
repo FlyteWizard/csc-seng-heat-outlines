@@ -7,6 +7,7 @@ import { startCourseList } from "./helpers/courses";
 import { CourseForm } from "./components/CourseForm";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { isHeatOutlineRetired } from "./helpers/isHeatOutlineRetired";
 
 export default function Index() {
   const [selectedCourse, setSelectedCourse] = useState(startCourseList.CSC);
@@ -62,20 +63,41 @@ export default function Index() {
           <h2 id="links">
             {selectedCourse} - {selectedTerm} {selectedYear}
           </h2>
+          {isHeatOutlineRetired(selectedTerm, selectedYear) ? (
+            <p>
+              <p className="text-red-600">
+                UVic Heat has been retired and is no longer available starting
+                Fall 2025. Please visit UVic's Course Outlines for all future
+                course outlines.
+              </p>
+              <p>
+                Course Outlines:{" "}
+                <a
+                  href="https://course-outlines.uvic.ca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://course-outlines.uvic.ca/
+                </a>
+              </p>
+            </p>
+          ) : (
+            <p>
+              Heat Outline:{" "}
+              <a
+                href={getHeatOutlineLink(
+                  selectedCourse,
+                  selectedTerm,
+                  selectedYear
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
+              </a>
+            </p>
+          )}
           <p>
-            Heat Outline:{" "}
-            <a
-              href={getHeatOutlineLink(
-                selectedCourse,
-                selectedTerm,
-                selectedYear
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
-            </a>
-            <br></br>
             Calendar Entry:{" "}
             <a
               href={getCalendarEntryLink(selectedCourse)}
@@ -87,18 +109,24 @@ export default function Index() {
           </p>
         </section>
 
-        <section
-          aria-describedby="preview"
-          className="prose prose-stone mx-auto max-w-7xl prose-a:break-words prose-a:text-violet-800 focus-within:prose-a:rounded focus-within:prose-a:outline-none focus-within:prose-a:ring-1 focus-within:prose-a:ring-violet-700 focus-within:prose-a:ring-offset-2 focus-within:prose-a:ring-offset-white"
-        >
-          <h2 id="preview">Heat Outline Preview</h2>
-          <iframe
-            title="Heat Outline Preview"
-            src={getHeatOutlineLink(selectedCourse, selectedTerm, selectedYear)}
-            allowFullScreen
-            className="h-96 w-full"
-          ></iframe>
-        </section>
+        {isHeatOutlineRetired(selectedTerm, selectedYear) ? null : (
+          <section
+            aria-describedby="preview"
+            className="prose prose-stone mx-auto max-w-7xl prose-a:break-words prose-a:text-violet-800 focus-within:prose-a:rounded focus-within:prose-a:outline-none focus-within:prose-a:ring-1 focus-within:prose-a:ring-violet-700 focus-within:prose-a:ring-offset-2 focus-within:prose-a:ring-offset-white"
+          >
+            <h2 id="preview">Heat Outline Preview</h2>
+            <iframe
+              title="Heat Outline Preview"
+              src={getHeatOutlineLink(
+                selectedCourse,
+                selectedTerm,
+                selectedYear
+              )}
+              allowFullScreen
+              className="h-96 w-full"
+            ></iframe>
+          </section>
+        )}
       </main>
 
       <Footer />
