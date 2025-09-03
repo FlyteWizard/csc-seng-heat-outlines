@@ -67,8 +67,8 @@ export default function Index() {
             <p>
               <p className="text-red-600">
                 UVic Heat has been retired and is no longer available starting
-                Fall 2025. Please visit UVic's Course Outlines for all future
-                course outlines.
+                Fall 2025. To view all future course outlines offered by UVic
+                please visit Course Outlines.
               </p>
               <p>
                 Course Outlines:{" "}

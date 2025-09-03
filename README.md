@@ -4,18 +4,18 @@
 
 A way for students to view past heat outlines for BME, CIVE, CSC, ECE, ENGR, MECH, and SENG courses offered by UVic.
 
-| Discipline                          | Code | URL                                      |
-|-------------------------------------|------|------------------------------------------|
-| Biomedical Engineering              | BME  | https://heat.csc.uvic.ca/colinks/sl/BME  |
-| Civil Engineering                   | CIVE | https://heat.csc.uvic.ca/colinks/sl/CIVE |
-| Computer Science                    | CSC  | https://heat.csc.uvic.ca/colinks/sl/CSC  |
-| Electrical and Computer Engineering | ECE  | https://heat.csc.uvic.ca/colinks/sl/ECE  |
-| Engineering                         | ENGR | https://heat.csc.uvic.ca/colinks/sl/ENGR |
-| Mechanical Engineering              | MECH | https://heat.csc.uvic.ca/colinks/sl/MECH |
-| Software Engineering                | SENG | https://heat.csc.uvic.ca/colinks/sl/SENG |
+| Discipline                          | Code | URL                                        |
+| ----------------------------------- | ---- | ------------------------------------------ |
+| Biomedical Engineering              | BME  | <https://heat.csc.uvic.ca/colinks/sl/BME>  |
+| Civil Engineering                   | CIVE | <https://heat.csc.uvic.ca/colinks/sl/CIVE> |
+| Computer Science                    | CSC  | <https://heat.csc.uvic.ca/colinks/sl/CSC>  |
+| Electrical and Computer Engineering | ECE  | <https://heat.csc.uvic.ca/colinks/sl/ECE>  |
+| Engineering                         | ENGR | <https://heat.csc.uvic.ca/colinks/sl/ENGR> |
+| Mechanical Engineering              | MECH | <https://heat.csc.uvic.ca/colinks/sl/MECH> |
+| Software Engineering                | SENG | <https://heat.csc.uvic.ca/colinks/sl/SENG> |
 
 ## UVic Heat Retired
 
-UVic Heat has been retired and is no longer available starting Fall 2025. 
+UVic Heat has been retired and is no longer available starting Fall 2025.
 
-To view all future course outlines offered by UVic please visit Course Outlines: https://course-outlines.uvic.ca/.
+To view all future course outlines offered by UVic please visit Course Outlines: <https://course-outlines.uvic.ca/>.
